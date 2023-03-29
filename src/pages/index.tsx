@@ -1,4 +1,9 @@
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
+
+const Table = dynamic(() => import("@/Components/Table"), {
+  ssr: false,
+});
 export default function Home() {
   return (
     <>
@@ -9,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Hey there</h1>
+        <Table />
       </main>
     </>
   )
